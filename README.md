@@ -55,7 +55,7 @@ Head over to the [Toolstore](https://app.toolhouse.ai/) and install the tools yo
 
 Tools are serverless functions that run on the Toolhouse infrastructure, and empower LLMs with new functionalities like scraping the internet, a particular website, or sending emails.
 
-Additionally, you can also create and use [Bundles](https://docs.toolhouse.ai/toolhouse/bundles) to reduce hallucinations and avoid unnecessary credit consumption. All you need to do is pass the Bundle name in Line 63 of `app.py`.
+Additionally, you can also create and use [Bundles](https://docs.toolhouse.ai/toolhouse/bundles) to reduce hallucinations and avoid unnecessary credit consumption. All you need to do is pass the Bundle name in Line 65 of `app.py`.
 
 # 🏃 Run the Application
 
@@ -69,7 +69,7 @@ By default, the Flask app runs on port=5000. Head over to the URL on your termin
 
 # 💡 Make Changes
 
-If you'd like to use the application out of the box with your own ideas, make changes to the `system_message` prompt, in Line 24 of `app.py`.
+If you'd like to use the application out of the box with your own ideas, make changes to the `system_message` prompt, in Line 27 of `app.py`.
 
 To make changes to the interface, edit `templates/index.html`.
 
