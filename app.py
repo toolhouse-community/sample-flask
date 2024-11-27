@@ -78,7 +78,7 @@ def chat():
             model="claude-3-5-sonnet-20240620",
             max_tokens=1024,
             system=system_message,
-            tools=th.get_tools(),
+            tools=th.get_tools(), # If you'd like to use Bundles, pass your Bundle name here. Example: tools=th.get_tools(event_bot)
             messages=messages
         )
         agent_reply = agent_setup.content[0].text if agent_setup.content else "No response generated."
