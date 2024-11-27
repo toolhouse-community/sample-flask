@@ -28,5 +28,5 @@ typing_extensions==4.12.2
 urllib3==2.2.2
 Flask==2.3.2
 anthropic
-toolhouse
+toolhouse==1.3.0
 python-dotenv

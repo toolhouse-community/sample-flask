@@ -57,6 +57,12 @@ Tools are serverless functions that run on the Toolhouse infrastructure, and emp
 
 Additionally, you can also create and use [Bundles](https://docs.toolhouse.ai/toolhouse/bundles) to reduce hallucinations and avoid unnecessary credit consumption. All you need to do is pass the Bundle name in Line 65 of `app.py`.
 
+For this sample application, we recommend the use of the following tools:
+
+- Current Time (current_time)
+- Get Page Contents (scraper)
+- Web Search (web_search)
+
 # 🏃 Run the Application
 
 In your terminal, execute the following command to start the application.
