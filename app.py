@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, jsonify, session
 import os
+from dotenv import load_dotenv
 import logging
 from anthropic import Anthropic
 from toolhouse import Toolhouse, Provider
+
+load_dotenv()
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -12,8 +15,8 @@ app.secret_key = os.urandom(24)  # Set a secret key for session management
 logging.basicConfig(level=logging.DEBUG)
 
 # Load API keys from environment variables
-CLAUDE_API_KEY = os.getenv("ANTHROPIC_KEY")
-TH_TOKEN = os.getenv("TOOLHOUSE_BEARER_TOKEN")
+CLAUDE_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+TH_TOKEN = os.getenv("TOOLHOUSE_API_KEY")
 
 # Initialize Anthropic and Toolhouse clients
 client = Anthropic(api_key=CLAUDE_API_KEY)
@@ -75,7 +78,7 @@ def chat():
             model="claude-3-5-sonnet-20240620",
             max_tokens=1024,
             system=system_message,
-            tools=th.get_tools(),
+            tools=th.get_tools(), # If you'd like to use Bundles, pass your Bundle name here. Example: tools=th.get_tools(event_bot)
             messages=messages
         )
         agent_reply = agent_setup.content[0].text if agent_setup.content else "No response generated."
